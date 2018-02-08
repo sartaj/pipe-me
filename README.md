@@ -21,7 +21,7 @@ buttonClicked
   |> sideEffect(state => console.log(state))
 ```
 
-## Ways to Import
+## Ways To Import
 
 If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
 
@@ -52,7 +52,7 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline --d
 
 The purpose of `pipe-me` is to provide an API design with gradual learning in mind. Currently, the API is mostly using operators found in [callbag-basics](https://github.com/staltz/callbag-basics) as a proof of concept. Over time, parts of this may diverge, as I intend to survey multiple code school students on their understanding of different names.
 
-## Is this standard JavaScript?
+## Is This Standard JavaScript?
 
 While `pipe-me` makes opinions on naming conventions of operators, under the hood is just a mash of two proposal specs, the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), and [callbags](https://github.com/callbag/callbag). 
 
