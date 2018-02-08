@@ -31,6 +31,7 @@ import { map, accumulate } from 'pipe-me/transforms'
 import { take, skip, filter } from 'pipe-me/filters'
 import { fromObservable, fromAsync, fromIterable, fromEvent, fromPromise } from 'pipe-me/create'
 import { merge, concat, combine, switchTo, flatten } from 'pipe-me/combiners'
+import { sideEffect } from 'pipe-me/side-effects'
 ```
 
 ## Setup
