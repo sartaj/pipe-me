@@ -9,18 +9,21 @@ const fromEvent = require('callbag-from-event')
 const fromPromise = require('callbag-from-promise')
 
 module.exports = {
-  fromObservable: (res) => share(fromObservable(res)),
-  fromIterable: (res) => share(fromIterable(res)),
-  fromAsync: (res) => share(fromAsync(res)),
-  fromEvent: (res) => share(fromEvent(res)),
-  fromPromise: (res) => share(fromPromise(res)),
+  // TODO: Make sure everything is multicast
+  fromObservable,
+  fromIterable,
+  fromAsync,
+  fromEvent,
+  fromPromise,
 
   sideEffect: require('callbag-for-each'),
-  log: (res) => forEach(((...args) => console.log(...args)))(res)
+  log: (res) => forEach(((...args) => console.log(...args)))(res),
 
   map: map,
   accumulate: require('callbag-scan'),
-  scan: () => throw new Error('If you meant `scan` in the Reactive Stream sense, Please use `accumulate` instead.')
+  scan: () => {
+    throw new Error('If you meant `scan` in the Reactive Stream sense, Please use `accumulate` instead.')
+  },
   flatten: require('callbag-flatten'),
   
   take: require('callbag-take'),
@@ -33,3 +36,4 @@ module.exports = {
   combine: require('callbag-combine'),
 
 }
+

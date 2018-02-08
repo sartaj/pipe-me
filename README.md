@@ -7,22 +7,19 @@ Pipeable programming for cleaner code.
 ```javascript
 import { fromEvent, filter, map, merge, sideEffect } from 'pipe-me'
 
-const renderUI = (coordinates) => {
-  const div = document.createElement(div)
-  div.innerHTML = coordinates
-  document.body.appendChild(coordinates)
-}
+
+import { getRandomFruit, getCurrentDateTime } from './utils' 
+import { renderDOM } from './dom'
 
 const buttonClicked = fromEvent(document, 'click')
-  |> filter(event => event.target.tagName === 'BUTTON'),
-  |> map(event => ({x: event.clientX, y: ev.clientY}))
+  |> filter(event => event.target.tagName === 'BUTTON')
+  |> map(() => ({ date: getCurrentDateTime(), fruit: getRandomFruit() }))
 
 buttonClicked
-  |> sideEffect(renderUI)
+  |> sideEffect(renderDOM)
 
 buttonClicked
-  |> sideEffect((state) => console.log(state))
-
+  |> sideEffect(state => console.log(state))
 ```
 
 ## Ways to Import
@@ -55,3 +52,7 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline --d
 You don't have to use this library to unleash this awesome writing style in JS. The far majority of the magic here is possible because of André Staltz's brilliant [callbag](https://github.com/callbag/callbag) protocol. To have this kind of JS code, you just need to want to use callbags and pipeable operators.
 
 The purpose of `pipe-me` is to provide an API design with gradual learning in mind. Currently, the API is mostly using operators found in [callbag-basics](https://github.com/staltz/callbag-basics) as a proof of concept. Over time, parts of this may diverge, as I intend to survey multiple code school students on their understanding of different names.
+
+## See For Yourself
+
+Clone this repo. Run `yarn` or `npm install`. Then `yarn example`. Then click the button in the example and watch the DOM and console both print at the same time with such little effort.

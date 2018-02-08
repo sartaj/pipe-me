@@ -7,12 +7,11 @@
   "author": "Sartaj <sartaj@sartaj.me>",
   "license": "MIT",
   "peerDependencies": {
-    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.39",
-    "@babel/preset-env": "^7.0.0-beta.39",
-    "@babel/cli": "^6.26.0"
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.39"
   },
   "scripts": {
-    "build-examples": "babel examples -d lib"
+    "example": "yarn build-examples && http-server examples/convert-fruit",
+    "build-examples": "browserify examples/convert-fruit/main.js -o examples/convert-fruit/bundle.js -t [ babelify --presets [ @babel/preset-env ] --plugins [ @babel/plugin-proposal-pipeline-operator ] ]"
   },
   "files": [
     "index.js",
@@ -41,8 +40,11 @@
     "callbag-take": "1.0.x"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.39",
     "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.39",
     "@babel/preset-env": "^7.0.0-beta.39",
-    "@babel/cli": "^6.26.0"
+    "babelify": "git+https://github.com/ladjs/babelify.git#ladjs/babelify",
+    "browserify": "^16.0.0",
+    "http-server": "^0.11.1"
   }
 }
