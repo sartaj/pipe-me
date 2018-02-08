@@ -1,0 +1,48 @@
+{
+  "name": "pipe-me",
+  "version": "1.0.0",
+  "description": "Pipeable programming for cleaner code.",
+  "main": "index.js",
+  "repository": "git@github.com:sartaj/pipe-me.git",
+  "author": "Sartaj <sartaj@sartaj.me>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "@babel/cli": "^6.26.0"
+  },
+  "scripts": {
+    "build-examples": "babel examples -d lib"
+  },
+  "files": [
+    "index.js",
+    "create.js",
+    "combiners.js",
+    "filters.js",
+    "transforms.js",
+    "README.md"
+  ],
+  "dependencies": {
+    "callbag": "1.0.x",
+    "callbag-combine": "1.0.x",
+    "callbag-concat": "1.0.x",
+    "callbag-filter": "1.0.x",
+    "callbag-flatten": "1.0.x",
+    "callbag-for-each": "1.0.x",
+    "callbag-from-event": "1.0.x",
+    "callbag-from-iter": "1.0.x",
+    "callbag-from-obs": "1.0.x",
+    "callbag-from-promise": "1.0.x",
+    "callbag-map": "1.0.x",
+    "callbag-merge": "1.0.x",
+    "callbag-scan": "1.0.x",
+    "callbag-share": "1.0.x",
+    "callbag-skip": "1.0.x",
+    "callbag-take": "1.0.x"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "@babel/cli": "^6.26.0"
+  }
+}
