@@ -7,7 +7,6 @@ Pipeable programming for cleaner code.
 ```javascript
 import { fromEvent, filter, map, merge, sideEffect } from 'pipe-me'
 
-
 import { getRandomFruit, getCurrentDateTime } from './utils' 
 import { renderDOM } from './dom'
 
@@ -34,7 +33,9 @@ import { fromObservable, fromAsync, fromIterable, fromEvent, fromPromise } from 
 import { merge, concat, combine, switchTo, flatten } from 'pipe-me/combiners'
 ```
 
-## Quick Set Up Babel
+## Setup
+
+To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to set up babel with the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator).
 
 ```json
 yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline --dev
@@ -47,11 +48,19 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline --d
 }
 ```
 
-## Details
-
-You don't have to use this library to unleash this awesome writing style in JS. The far majority of the magic here is possible because of André Staltz's brilliant [callbag](https://github.com/callbag/callbag) protocol. To have this kind of JS code, you just need to want to use callbags and pipeable operators.
+## Purpose
 
 The purpose of `pipe-me` is to provide an API design with gradual learning in mind. Currently, the API is mostly using operators found in [callbag-basics](https://github.com/staltz/callbag-basics) as a proof of concept. Over time, parts of this may diverge, as I intend to survey multiple code school students on their understanding of different names.
+
+## Is this standard JavaScript?
+
+While `pipe-me` makes opinions on naming conventions of operators, under the hood is just a mash of two proposal specs, the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), and [callbags](https://github.com/callbag/callbag). 
+
+In terms of the the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), it is currently a TC39 proposal, similar to object spread. So technically it is subject to change. However, based on [the issues in the proposal](https://github.com/tc39/proposal-pipeline-operator/issues), most concerns are around how to handle the `await` syntax and multiple parameters. These issues are a mute point in `pipe-me`, because by using the `callbag` spec, all of our non combining operators are single parameter, and `async/await` is handled by the `fromIterable` and `fromAsync` operator.
+
+In terms of the actual operators themselves, the far majority of the magic here is possible because of André Staltz's brilliant [callbag](https://github.com/callbag/callbag) spec. Because callbags are functional compositions, and because pipeline operators are just function compositions under the hood, any callbag can be used with pipeline operators.
+
+This actually means you can use this library with any other callbag library to unleash this awesome writing style in JS.
 
 ## See For Yourself
 
