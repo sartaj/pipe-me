@@ -16,6 +16,7 @@
   "files": [
     "index.js",
     "create.js",
+    "side-effects.js",
     "combiners.js",
     "filters.js",
     "transforms.js",
