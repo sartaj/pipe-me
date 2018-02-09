@@ -36,6 +36,19 @@ import { sideEffect } from 'pipe-me/side-effects'
 
 ## Setup
 
+### Yarn/npm
+
+
+```bash
+yarn add pipe-me
+```
+
+```bash
+npm install pipe-me --save
+```
+
+### Babel
+
 To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to set up babel with the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator).
 
 ```json
