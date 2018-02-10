@@ -2,7 +2,7 @@
   "name": "pipe-me",
   "version": "1.0.1",
   "description": "Pipeable programming for cleaner code.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": "git@github.com:sartaj/pipe-me.git",
   "author": "Sartaj <sartaj@sartaj.me>",
   "license": "MIT",
