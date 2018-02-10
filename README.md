@@ -5,6 +5,7 @@
 [![npm Downloads](https://img.shields.io/npm/dm/pipe-me.svg)]()
 [![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)]()
 [![DevDependencies](https://img.shields.io/david/dev/sartaj/pipe-me.svg)]()
+[![Known Vulnerabilities](https://snyk.io/test/github/sartaj/pipe-me/badge.svg)](https://snyk.io/test/github/sartaj/pipe-me)
 
 # pipe-me
 
