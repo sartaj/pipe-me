@@ -1,7 +1,7 @@
 {
   "name": "pipe-me",
-  "version": "1.0.2",
-  "description": "Pipeable programming for cleaner code.",
+  "version": "1.0.3",
+  "description": "Pipeable programming for cleaner code. Uses callbags and pipeline operator.",
   "main": "lib/index.js",
   "repository": "git@github.com:sartaj/pipe-me.git",
   "author": "Sartaj <sartaj@sartaj.me>",
@@ -15,6 +15,14 @@
     "example": "yarn build-examples && http-server examples/convert-fruit",
     "build-examples": "browserify examples/convert-fruit/main.js -o examples/convert-fruit/bundle.js -t [ babelify --presets [ @babel/preset-env ] --plugins [ @babel/plugin-proposal-pipeline-operator ] ]"
   },
+  "keywords": [
+    "callbag",
+    "pipeline",
+    "pipeline operator",
+    "observable",
+    "iterable",
+    "streams"
+  ],
   "files": [
     "index.js",
     "create.js",
