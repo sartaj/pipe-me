@@ -4,6 +4,7 @@ node_js:
   - "8.1"
 install:
   - npm install -g codecov
+  - npm install
 script:
   - npm test
   - npm run coverage
