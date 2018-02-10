@@ -7,7 +7,7 @@ Pipeable programming for cleaner code.
 ```javascript
 import { fromEvent, filter, map, merge, sideEffect } from 'pipe-me'
 
-import { getRandomFruit, getCurrentDateTime } from './utils' 
+import { getRandomFruit, getCurrentDateTime } from './utils'
 import { renderDOM } from './dom'
 
 const buttonClicked = fromEvent(document, 'click')
