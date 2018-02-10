@@ -2125,6 +2125,10 @@ get-stdin@^4.0.1:
   version "4.0.1"
   resolved "https://nexus-uat.ntrs.com:8445/nexus/content/groups/npm-group/get-stdin/-/get-stdin-4.0.1.tgz#b968c6b0a04384324902e8bf1a5df32579a450fe"
 
+get-stdin@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
+
 get-stream@^3.0.0:
   version "3.0.0"
   resolved "https://nexus-uat.ntrs.com:8445/nexus/content/groups/npm-group/get-stream/-/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"
