@@ -1,7 +1,6 @@
 import test from 'ava'
-import { log } from '../lib/side-effects'
-import { fromPromise } from '../lib/create'
-import getStdIn from 'get-stdin'
+import { log } from '../side-effects'
+import { fromPromise } from '../create'
 
 const fetch1 = async () => true
 

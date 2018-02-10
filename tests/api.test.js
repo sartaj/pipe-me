@@ -54,7 +54,7 @@ const API_SPEC = {
 test('Verify API', t => {
   Object.keys(API_SPEC)
     .map(apiName => {
-      const apiPath = require.resolve(path.join('../lib', `${apiName}.js`))
+      const apiPath = require.resolve(path.join('../', `${apiName}.js`))
       const api = require(apiPath)
       const spec = API_SPEC[apiName]
 

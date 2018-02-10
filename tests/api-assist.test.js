@@ -1,5 +1,5 @@
 import test from 'ava'
-import { scan } from '../lib/index'
+import { scan } from '../index'
 
 const fetch1 = async () => true
 
