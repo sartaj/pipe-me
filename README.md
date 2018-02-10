@@ -1,7 +1,7 @@
 [![npm](https://img.shields.io/npm/v/pipe-me.svg)]()
 [![Build Status](https://travis-ci.org/sartaj/pipe-me.svg?branch=master)](https://travis-ci.org/sartaj/pipe-me)
 [![GitHub issues](https://img.shields.io/github/issues/sartaj/pipe-me.svg)](https://github.com/sartaj/pipe-me/issues)
-[![Coverage Status](https://coveralls.io/repos/github/sartaj/pipe-me/badge.svg?branch=master)](https://coveralls.io/github/sartaj/pipe-me?branch=master)
+[![codecov](https://codecov.io/gh/sartaj/pipe-me/branch/master/graph/badge.svg)](https://codecov.io/gh/sartaj/pipe-me)
 [![npm Downloads](https://img.shields.io/npm/dm/pipe-me.svg)]()
 [![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)]()
 [![DevDependencies](https://img.shields.io/david/dev/sartaj/pipe-me.svg)]()
