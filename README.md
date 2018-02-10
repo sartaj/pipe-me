@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/sartaj/pipe-me.svg?branch=master)](https://travis-ci.org/sartaj/pipe-me)
+[![GitHub issues](https://img.shields.io/github/issues/sartaj/pipe-me.svg)](https://github.com/sartaj/pipe-me/issues)
+[![Coverage Status](https://coveralls.io/repos/github/sartaj/pipe-me/badge.svg?branch=master)](https://coveralls.io/github/sartaj/pipe-me?branch=master)
+[![npm](https://img.shields.io/npm/dm/pipe-me.svg)]()
+
 # pipe-me
 
 Pipeable programming for cleaner code.
