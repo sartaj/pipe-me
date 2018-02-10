@@ -5,7 +5,7 @@ const API_SPEC = {
   'index': [
     'fromObservable',
     'fromIterable',
-    'fromAsync',
+    // 'fromAsync',
     'fromEvent',
     'fromPromise',
     'sideEffect',
@@ -24,7 +24,7 @@ const API_SPEC = {
   ],
   'create': [
     'fromObservable',
-    'fromAsync',
+    // 'fromAsync',
     'fromIterable',
     'fromEvent',
     'fromPromise'
@@ -35,7 +35,8 @@ const API_SPEC = {
     'filter'
   ],
   'side-effects': [
-    'sideEffect'
+    'sideEffect',
+    'log'
   ],
   'transforms': [
     'map',
