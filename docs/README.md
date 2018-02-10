@@ -1,15 +1,5 @@
 # pipe-me
 
-A clean & functional way to describe your app.
-
-Under the hood, it uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag).
-
-Supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
-
-If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
-
-## Status
-
 [![npm](https://img.shields.io/npm/v/pipe-me.svg)]()
 [![Build Status](https://travis-ci.org/sartaj/pipe-me.svg?branch=master)](https://travis-ci.org/sartaj/pipe-me)
 [![GitHub issues](https://img.shields.io/github/issues/sartaj/pipe-me.svg)](https://github.com/sartaj/pipe-me/issues)
@@ -18,6 +8,14 @@ If you are new to JavaScript, this library may sound complicated, but bear with 
 [![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)]()
 [![DevDependencies](https://img.shields.io/david/dev/sartaj/pipe-me.svg)]()
 [![Known Vulnerabilities](https://snyk.io/test/github/sartaj/pipe-me/badge.svg)](https://snyk.io/test/github/sartaj/pipe-me)
+
+A clean & functional way to describe your app.
+
+Under the hood, it uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag).
+
+Supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
+
+If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
 
 ## Example
 
@@ -57,7 +55,11 @@ npm install pipe-me --save
 
 ### Babel
 
-To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to set up babel with the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator).
+To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to add the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator) to your babel config.
+
+### Fresh Install
+
+For setting up from scratch, the following should be adequate.
 
 ```json
 yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline --dev
@@ -66,21 +68,101 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline --d
 ```json
 {
     "presets": ["@babel/preset-env"],
-    "plugins": ["@babel/plugin-proposal-pipeline-operator "]
+    "plugins": ["@babel/plugin-proposal-pipeline-operator"]
 }
 ```
 
-### Ways To Import
+## API
 
 If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
 
+### Category Overview
+
+* Create: Create callbags from a number of sources, including Promises, Generators, etc.
+* Side Effects: Only way to have data affect external world, including UI. Only two methods are `sideEffect`, and `log`.
+* Transforms: Change the content of your data.
+* Filters: Filter out data based on different criteria. Includes different timer operators, like time based ones like `throttle`.
+* Combiners: Combine 2 or more callbags into with different techniques.
+
+### Import Anything
+
 ```js
 import { ... } from 'pipe-me'
+```
+
+As a shortcut, you can import any of the below from the root of the library.
+
+### Create
+
+```js
+import { fromEvent, fromPromise, fromObservable, fromIterable } from 'pipe-me/create'
+```
+
+#### fromEvent
+
+Get data from any event listener.
+
+```js
+import { fromEvent } from 'pipe-me/create'
+
+const buttonClicked = fromEvent(document, 'click')
+  |> filter(event => event.target.tagName === 'BUTTON')
+```
+
+#### fromPromise
+
+```js
+import { fromPromise } from 'pipe-me/create'
+
+const promiseResolved = fromPromise(Promise.resolve([0, 1, 2])
+```
+
+#### fromObservable
+
+```js
+import { Observable } from 'rxjs'
+import { fromObservable } from 'pipe-me/create'
+
+const observed = fromObservable(Observable.of([0, 1, 2])
+```
+
+#### fromIterable
+
+```js
+import { Observable } from 'rxjs'
+import { fromIterable } from 'pipe-me/create'
+
+function* generate(i) {
+    yield i*2;
+}
+
+const observed = fromIterable(generate(2))
+```
+
+### Side Effects
+
+Side effects are the only place you can make a change.
+
+```js
+import { sideEffect, log } from 'pipe-me/side-effects'
+```
+
+### Transforms
+
+```js
 import { map, accumulate } from 'pipe-me/transforms'
+```
+
+### Filters
+
+```js
 import { take, skip, filter } from 'pipe-me/filters'
-import { fromObservable, fromAsync, fromIterable, fromEvent, fromPromise } from 'pipe-me/create'
-import { merge, concat, combine, switchTo, flatten } from 'pipe-me/combiners'
-import { sideEffect } from 'pipe-me/side-effects'
+```
+
+### Combiners
+
+```js
+import { merge, concat, combine, flatten } from 'pipe-me/combiners'
 ```
 
 ## Goals
