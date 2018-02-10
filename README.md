@@ -57,7 +57,7 @@ npm install pipe-me --save
 
 To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to add the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator) to your babel config.
 
-### Fresh Install
+#### Fresh Install
 
 For setting up from scratch, the following should be adequate.
 
