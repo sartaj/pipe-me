@@ -2,7 +2,7 @@ const {
   fromObservable,
   fromIterable,
   fromEvent,
-  fromPromise,
+  fromPromise
 } = require('./index')
 module.exports = {
   fromObservable,

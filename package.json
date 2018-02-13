@@ -11,6 +11,7 @@
   },
   "scripts": {
     "test": "ava",
+    "watch": "ava --watch",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "example": "yarn build-examples && http-server examples/convert-fruit",
     "build-examples": "browserify examples/convert-fruit/main.js -o examples/convert-fruit/bundle.js -t [ babelify --presets [ @babel/preset-env ] --plugins [ @babel/plugin-proposal-pipeline-operator ] ]"
@@ -56,8 +57,10 @@
     "@babel/preset-env": "^7.0.0-beta.39",
     "ava": "^0.25.0",
     "babelify": "git+https://github.com/ladjs/babelify.git#ladjs/babelify",
+    "browser-env": "^3.2.5",
     "browserify": "^16.0.0",
     "http-server": "^0.11.1",
-    "nyc": "^11.4.1"
+    "nyc": "^11.4.1",
+    "zen-observable": "^0.8.6"
   }
 }

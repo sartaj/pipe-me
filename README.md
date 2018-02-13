@@ -94,8 +94,10 @@ As a shortcut, you can import any of the below from the root of the library.
 
 ### Create
 
+All of these creators are 'multicast' by default, meaning you can chain multiple side effects without an issue.
+
 ```js
-import { fromEvent, fromPromise, fromObservable, fromIterable } from 'pipe-me/create'
+import { fromEvent, fromPromise, fromObservable, fromIterable, share } from 'pipe-me/create'
 ```
 
 #### fromEvent
@@ -111,6 +113,8 @@ const buttonClicked = fromEvent(document, 'click')
 
 #### fromPromise
 
+Get data from any Promise or `async` function.
+
 ```js
 import { fromPromise } from 'pipe-me/create'
 
@@ -118,6 +122,8 @@ const promiseResolved = fromPromise(Promise.resolve([0, 1, 2])
 ```
 
 #### fromObservable
+
+Interop with Observable systems such as `rxjs`, `xstream`, `most`, and `kefir`.
 
 ```js
 import { Observable } from 'rxjs'
@@ -128,12 +134,14 @@ const observed = fromObservable(Observable.of([0, 1, 2])
 
 #### fromIterable
 
+Interop with Generators/Iterables.
+
 ```js
 import { Observable } from 'rxjs'
 import { fromIterable } from 'pipe-me/create'
 
 function* generate(i) {
-    yield i*2;
+  yield i*2;
 }
 
 const observed = fromIterable(generate(2))
@@ -145,6 +153,49 @@ Side effects are the only place you can make a change.
 
 ```js
 import { sideEffect, log } from 'pipe-me/side-effects'
+```
+
+#### sideEffect
+
+`sideEffect` is the only place you can make changes to the real world with the data you are transforming. This is where most of the 'real' work happens, like loggings, rendering UI, etc.
+
+```js
+buttonClicked
+  |> sideEffect(renderDOM)
+```
+
+#### log
+
+`log` is a simple method to help you quickly console log different parts of your streams.
+
+```js
+buttonClicked
+  |> log
+```
+
+#### share
+
+Allow multiple sideEffects. All of `pipe-me` creators use `share` under the hood, so this method won't be necessary most of the time. If you create a callbag with another library, this `share` method could become useful in those scenarios.
+
+```js
+import { share } from 'pipe-me/create'
+
+function* generate(i) {
+  yield i*2;
+}
+
+const observed = fromIterable(generate(2))
+
+const shared = share(observed)
+
+share
+  |> sideEffect(d => { console.log(d) /* 4 */ })
+
+setTimeout(() => {
+  share
+    |> sideEffect(d => { console.log(d) /* 4 */ })
+}, 300)
+
 ```
 
 ### Transforms

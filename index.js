@@ -10,13 +10,15 @@ const fromPromise = require('callbag-from-promise')
 module.exports = {
   // Create
   // TODO: Make sure everything is multicast
-  fromObservable,
-  fromIterable,
+  fromObservable: (...args) => share(fromObservable(...args)),
+  fromIterable: (...args) => share(fromIterable(...args)),
+  // fromEvent: (...args) => share(fromEvent(...args)),
   fromEvent,
-  fromPromise,
+  fromPromise: (...args) => share(fromPromise(...args)),
   // fromAsync: fromPromise,
 
   // Side Effects
+  share,
   sideEffect: require('callbag-for-each'),
   log: (res) => forEach(((...args) => console.log(...args)))(res),
 
