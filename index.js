@@ -44,7 +44,7 @@ const filter = require('callbag-filter')
    *
    * Whenever you want to transform/change the contents of your stream, you'll use map.
    * 
-   * ![](https://raw.githubusercontent.com/sartaj/pipe-me/2668e0a1122cb3a38360b075e09ad51ba93a36d4/docs/assets/diagrams/map.png)
+   * ![](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/map.png?raw=true)
    * 
    */
   map: map,
