@@ -4,11 +4,15 @@ const forEach = require('callbag-for-each')
 const share = require('callbag-share')
 const fromObservable  = require('callbag-from-obs')
 const fromIterable = require('callbag-from-iter')
-const fromEvent = require('callbag-from-event')
+const frome = require('callbag-from-event')
 const fromPromise = require('callbag-from-promise')
 const filter = require('callbag-filter')
 
-module.exports = {
+/**
+ *  # THIS IS MY MODULE
+ * 
+*/
+ module.exports = {
   // Create
   // TODO: Make sure everything is multicast
   fromObservable: (...args) => share(fromObservable(...args)),
@@ -20,7 +24,12 @@ module.exports = {
   // Side Effects
 
   /**
-   * # Side Effect
+   * # Side Effects
+   * Side effects are reactions to your data flow. Things like actual
+   * user interface code (`<div></div>`), the browser url bar, network requests,
+   * LED lights turning on, etc. Create any side effect here.
+   *
+   * ![](./docs/assets/diagrams/map.png)
    */
   sideEffect: require('callbag-for-each'),
 
@@ -30,7 +39,12 @@ module.exports = {
   log: (res) => forEach(((...args) => console.log(...args)))(res),
 
   /**
-   * # this is a test
+   * # Side Effects
+   * Side effects are reactions to your data flow. Things like actual
+   * user interface code (`<div></div>`), the browser url bar, network requests,
+   * LED lights turning on, etc. Create any side effect here.
+   *
+   * ![](./docs/assets/diagrams/map.png)
    */
   map: map,
 
