@@ -29,7 +29,6 @@ const filter = require('callbag-filter')
    * user interface code (`<div></div>`), the browser url bar, network requests,
    * LED lights turning on, etc. Create any side effect here.
    *
-   * ![](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/map.png?raw=true)
    *
    */
   sideEffect: require('callbag-for-each'),
@@ -40,11 +39,13 @@ const filter = require('callbag-filter')
   log: (res) => forEach(((...args) => console.log(...args)))(res),
 
   /**
-   * # Side Effects
-   * Side effects are reactions to your data flow. Things like actual
-   * user interface code (`<div></div>`), the browser url bar, network requests,
-   * LED lights turning on, etc. Create any side effect here.
+   * # `map`
+   * ### ***(aka transforming streams)***
    *
+   * Whenever you want to transform/change the contents of your stream, you'll use map.
+   * 
+   * ![](https://raw.githubusercontent.com/sartaj/pipe-me/2668e0a1122cb3a38360b075e09ad51ba93a36d4/docs/assets/diagrams/map.png)
+   * 
    */
   map: map,
 
