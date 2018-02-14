@@ -29,7 +29,7 @@ const filter = require('callbag-filter')
    * user interface code (`<div></div>`), the browser url bar, network requests,
    * LED lights turning on, etc. Create any side effect here.
    *
-   * ![](./docs/assets/diagrams/map.png)
+   * ![](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/map.png?raw=true)
    */
   sideEffect: require('callbag-for-each'),
 
@@ -44,7 +44,7 @@ const filter = require('callbag-filter')
    * user interface code (`<div></div>`), the browser url bar, network requests,
    * LED lights turning on, etc. Create any side effect here.
    *
-   * ![](./docs/assets/diagrams/map.png)
+   * ![](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/map.png?raw=true)
    */
   map: map,
 
