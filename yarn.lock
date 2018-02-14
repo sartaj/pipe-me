@@ -1381,9 +1381,9 @@ callbag-for-each@1.0.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/callbag-for-each/-/callbag-for-each-1.0.0.tgz#c306418cfcb2c0dbfbee49f2f0490932d03b5890"
 
-callbag-from-event@1.0.x:
+"callbag-from-event@https://github.com/sartaj/callbag-from-event.git":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/callbag-from-event/-/callbag-from-event-1.0.0.tgz#e3a8931cd46775256eff3a960a743ad1c7ccfea9"
+  resolved "https://github.com/sartaj/callbag-from-event.git#095deb0017659816258cc3d2a9736fc44a9bb8da"
 
 callbag-from-iter@1.0.x:
   version "1.0.0"
