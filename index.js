@@ -28,6 +28,8 @@ const filter = require('callbag-filter')
    * Side effects are reactions to your data flow. Things like actual
    * user interface code (`<div></div>`), the browser url bar, network requests,
    * LED lights turning on, etc. Create any side effect here.
+   * 
+   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/sideEffect.png?raw=true)
    *
    */
   sideEffect: require('callbag-for-each'),
