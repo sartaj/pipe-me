@@ -90,7 +90,6 @@ module.exports = {
    *
    * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/master/docs/assets/diagrams/sideEffect.png?raw=true)
    */
-
   sideEffect: require('callbag-for-each'),
 
   /**
