@@ -61,22 +61,25 @@ module.exports = {
   /**
    * # `flatten`
    * 
-   * ![](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/memes/stream-within-a-stream.png?raw=true)
+   * ![](https://raw.githubusercontent.com/sartaj/pipe-me/feature/inline-docs/docs/assets/memes/stream-within-a-stream.jpg)
+
    * Sometimes, the contents of your callbag stream may be another stream.
    * 
    * ```js
    *  const fetchData = fromPromise(callAPI)
-
+   *
    *  // This has fetchData Stream itself, not it's contents.
    *  const dataStreamRetrieved = userClicked.map(fetchData)
    * ```
-
+   *
    * `flatten` can make that data the main stream.
+   * 
    * ```
    *  // This actually has the data.
    *  const dataRetrieved = flatten(dataStreamRetrieved)
    * ```
-   *  `|> map() |> flatten` is another way to do 'switchTo' in this library, also known as `flatMap` and `switchMap`.
+   * 
+   * `|> map() |> flatten` is another way to do 'switchTo' in this library, also known as `flatMap` and `switchMap`.
    * 
    */
   flatten: require('callbag-flatten'),
