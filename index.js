@@ -62,7 +62,7 @@ module.exports = {
    * # `flatten`
    * 
    * ![](https://raw.githubusercontent.com/sartaj/pipe-me/feature/inline-docs/docs/assets/memes/stream-within-a-stream.jpg)
-
+   * 
    * Sometimes, the contents of your callbag stream may be another stream.
    * 
    * ```js
