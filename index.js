@@ -130,7 +130,7 @@ module.exports = {
    * 
    * Sometimes, the contents of source may be another stream. As in, a stream within a stream.
    * 
-   * ![](https://raw.githubusercontent.com/sartaj/pipe-me/feature/inline-docs/docs/assets/memes/stream-in-stream.jpg)
+   * ![](https://github.com/sartaj/pipe-me/blob/master/docs/assets/memes/stream-in-stream.jpg?raw=true)
    * 
    * `flatten` can make that data the main stream.
    * 
