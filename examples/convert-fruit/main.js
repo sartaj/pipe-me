@@ -1,4 +1,5 @@
-import { fromEvent, filter, map, merge, sideEffect } from '../../index.js'
+import { fromEvent, filter, map, merge, sideEffect, flatten } from '../../index.js'
+import { flatten } from '../../transforms'
 
 import { getRandomFruit, getCurrentDateTime } from './utils' 
 import { renderDOM } from './dom'

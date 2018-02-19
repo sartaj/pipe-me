@@ -1,76 +1,95 @@
-import test from "ava";
-import Observable from 'zen-observable';
-import browserEnv from 'browser-env';
-browserEnv();
+import test from 'ava'
+import browserEnv from 'browser-env'
 
-import { fromPromise, fromObservable, fromIterable, fromEvent, sideEffect } from "../index";
+import { fromEvent, sideEffect, fromIterable, fromPromise, fromObservable } from '../index' 
 
-const makeLazy = func => setTimeout(func, 30)
+browserEnv()
 
-test.cb("fromPromise should multicast", t => {
+test.cb('fromEvent share', t => {
   t.plan(1)
+  const div = document.createElement('div')
+  const userClicked = fromEvent(div, 'click')
 
-  const q = new Promise((resolve, reject) => {
-    makeLazy(() => {
-      resolve('passed')
-    })    
-  })
+  div.click()
 
-  const promiseReceived = fromPromise(q);
+  sideEffect(async e => {
+    await e;
+  })(userClicked)
 
-  makeLazy(() => {
-    sideEffect(data => {
-      t.pass(data)
+  setTimeout(() => {
+    sideEffect(async e => {
+      await e;
+      t.pass()
       t.end()
-    })(promiseReceived)
-  })
+    })(userClicked)
+  }, 50)
+
+
+  setTimeout(() => {
+    div.click()
+  }, 100)
 })
 
-test.cb("fromIterable should multicast", t => {
+test.cb('fromIterable share', t => {
   t.plan(1)
-  function* range(from, to) {
-    let i = from;
-    while (i <= to) {
-      yield i;
-      i++;
+  const numberArray = fromIterable([0, 1, 2])
+
+  sideEffect(async e => {
+    await e;
+  })(numberArray)
+
+  setTimeout(() => {
+    sideEffect(async e => {
+      if( e === 1 ) {
+        t.pass()
+        t.end()  
+      };
+    })(numberArray)
+  }, 50)
+})
+
+test.cb('fromPromise share', t => {
+  t.plan(1)
+  const numberArray = fromPromise(Promise.resolve(2))
+
+  sideEffect(async e => {
+    await e;
+  })(numberArray)
+
+  setTimeout(() => {
+    sideEffect(async e => {
+      if( e === 2 ) {
+        t.pass()
+        t.end()  
+      };
+    })(numberArray)
+  }, 50)
+})
+
+test.cb('fromObservable share', t => {
+  const mock = {
+    subscribe: (observer) => {
+      let i = 0;
+      let id = setInterval(() => observer.next(i++), 50);
+      return function unsubscribe() {
+        clearInterval(id);
+      };
     }
   }
-
-  const iterableReceived = fromIterable(range(40, 41));
-
-  makeLazy(() => {
-    sideEffect(data => {
-      t.pass(data)
-      t.end()
-    })(iterableReceived)
-  })
-})
-
-test.cb("fromObservable should multicast", t => {
   t.plan(1)
+  const numberArray = fromObservable(mock)
 
-  const number$ = fromObservable(Observable.of(1, 2, 3));
+  sideEffect(async e => {
+    await e;
+  })(numberArray)
 
-  makeLazy(() => {
-    sideEffect(data => {
-      t.pass()
-      t.end()
-    })(number$)
-  })
-})
-
-test.cb("fromEvent should multicast", t => {
-  t.plan(1)
-
-  const div = document.createElement('div')
-  const number$ = fromEvent(div, 'click');
-
-  makeLazy(() => {
-    sideEffect(data => {
-      t.pass()
-      t.end()
-    })(number$)
-    div.click()
-  })
+  setTimeout(() => {
+    sideEffect(async e => {
+      if( e === 2 ) {
+        t.pass()
+        t.end()  
+      };
+    })(numberArray)
+  }, 50)
 })
 
