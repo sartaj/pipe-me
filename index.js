@@ -4,17 +4,15 @@ const forEach = require('callbag-for-each')
 const share = require('callbag-share')
 const fromObservable  = require('callbag-from-obs')
 const fromIterable = require('callbag-from-iter')
-const frome = require('callbag-from-event')
+const fromEvent = require('callbag-from-event')
 const fromPromise = require('callbag-from-promise')
 const filter = require('callbag-filter')
 
 /**
  *  # THIS IS MY MODULE
- * 
 */
- module.exports = {
+module.exports = {
   // Create
-  // TODO: Make sure everything is multicast
   fromObservable: (...args) => share(fromObservable(...args)),
   fromIterable: (...args) => share(fromIterable(...args)),
   fromEvent: (...args) => share(fromEvent(...args)),
@@ -35,7 +33,8 @@ const filter = require('callbag-filter')
   sideEffect: require('callbag-for-each'),
 
   /**
-   * # this is a test
+   * # `log`
+   * Shortcut for sideEffect((data) => { console.log(data) })
    */
   log: (res) => forEach(((...args) => console.log(...args)))(res),
 
@@ -51,19 +50,34 @@ const filter = require('callbag-filter')
   map: map,
 
   /**
-   * # this is a test
+   * # `accumulate`
+   * aka(ish): Rx: 'scan' | Arrays: 'reduce'
+   *
+   * This allows you to build up data over time.
+   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/map.png?raw=true)
    */
   accumulate: require('callbag-scan'),
 
   /**
-   * # this is a test
-   */
-  scan: () => {
-    throw new Error('If you meant `scan` in the Reactive Stream sense, Please use `accumulate` instead.')
-  },
+   * # `flatten`
+   * 
+   * ![](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/memes/stream-within-a-stream.png?raw=true)
+   * Sometimes, the contents of your callbag stream may be another stream.
+   * 
+   * ```js
+   *  const fetchData = fromPromise(callAPI)
 
-  /**
-   * # this is a test
+   *  // This has fetchData Stream itself, not it's contents.
+   *  const dataStreamRetrieved = userClicked.map(fetchData)
+   * ```
+
+   * `flatten` can make that data the main stream.
+   * ```
+   *  // This actually has the data.
+   *  const dataRetrieved = flatten(dataStreamRetrieved)
+   * ```
+   *  `|> map() |> flatten` is another way to do 'switchTo' in this library, also known as `flatMap` and `switchMap`.
+   * 
    */
   flatten: require('callbag-flatten'),
 
