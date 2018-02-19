@@ -94,64 +94,10 @@ As a shortcut, you can import any of the below from the root of the library.
 
 ### Create
 
-<<<<<<< HEAD
 Create multi-casted callbags from multiple sources.
 
 ```js
 import { fromEvent, fromPromise, fromObservable, fromIterable } from 'pipe-me/create'
-=======
-All of these creators are 'multicast' by default, meaning you can chain multiple side effects without an issue.
-
-```js
-import { fromEvent, fromPromise, fromObservable, fromIterable, share } from 'pipe-me/create'
-```
-
-#### fromEvent
-
-Get data from any event listener.
-
-```js
-import { fromEvent } from 'pipe-me/create'
-
-const buttonClicked = fromEvent(document, 'click')
-  |> filter(event => event.target.tagName === 'BUTTON')
-```
-
-#### fromPromise
-
-Get data from any Promise or `async` function.
-
-```js
-import { fromPromise } from 'pipe-me/create'
-
-const promiseResolved = fromPromise(Promise.resolve([0, 1, 2])
-```
-
-#### fromObservable
-
-Interop with Observable systems such as `rxjs`, `xstream`, `most`, and `kefir`.
-
-```js
-import { Observable } from 'rxjs'
-import { fromObservable } from 'pipe-me/create'
-
-const observed = fromObservable(Observable.of([0, 1, 2])
-```
-
-#### fromIterable
-
-Interop with Generators/Iterables.
-
-```js
-import { Observable } from 'rxjs'
-import { fromIterable } from 'pipe-me/create'
-
-function* generate(i) {
-  yield i*2;
-}
-
-const observed = fromIterable(generate(2))
->>>>>>> b1b4b9ac9757a2b801134dea83e86f281f393f2b
 ```
 
 ### Side Effects
