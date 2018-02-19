@@ -72,11 +72,9 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline --d
 }
 ```
 
-## API
+## Categories
 
 If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
-
-### Category Overview
 
 * Create: Create callbags from a number of sources, including Promises, Generators, etc.
 * Side Effects: Only way to have data affect external world, including UI. Only two methods are `sideEffect`, and `log`.
@@ -108,50 +106,9 @@ Side effects are the only place you can make a change.
 import { sideEffect, log } from 'pipe-me/side-effects'
 ```
 
-#### sideEffect
-
-`sideEffect` is the only place you can make changes to the real world with the data you are transforming. This is where most of the 'real' work happens, like loggings, rendering UI, etc.
-
-```js
-buttonClicked
-  |> sideEffect(renderDOM)
-```
-
-#### log
-
-`log` is a simple method to help you quickly console log different parts of your streams.
-
-```js
-buttonClicked
-  |> log
-```
-
-#### share
-
-Allow multiple sideEffects. All of `pipe-me` creators use `share` under the hood, so this method won't be necessary most of the time. If you create a callbag with another library, this `share` method could become useful in those scenarios.
-
-```js
-import { share } from 'pipe-me/create'
-
-function* generate(i) {
-  yield i*2;
-}
-
-const observed = fromIterable(generate(2))
-
-const shared = share(observed)
-
-share
-  |> sideEffect(d => { console.log(d) /* 4 */ })
-
-setTimeout(() => {
-  share
-    |> sideEffect(d => { console.log(d) /* 4 */ })
-}, 300)
-
-```
-
 ### Transforms
+
+Change the contents of a stream.
 
 ```js
 import { map, accumulate } from 'pipe-me/transforms'
@@ -159,11 +116,15 @@ import { map, accumulate } from 'pipe-me/transforms'
 
 ### Filters
 
+Filter stream emitting based on conditionals.
+
 ```js
 import { take, skip, filter } from 'pipe-me/filters'
 ```
 
 ### Combiners
+
+Combine multiple streams into new streams.
 
 ```js
 import { merge, concat, combine, flatten } from 'pipe-me/combiners'
