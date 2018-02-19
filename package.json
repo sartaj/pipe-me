@@ -1,6 +1,6 @@
 {
   "name": "pipe-me",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Pipeable programming for cleaner code. Uses callbags and pipeline operator.",
   "main": "index.js",
   "repository": "git@github.com:sartaj/pipe-me.git",
