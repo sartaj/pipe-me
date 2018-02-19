@@ -8,6 +8,7 @@ const API_SPEC = {
     // 'fromAsync',
     'fromEvent',
     'fromPromise',
+    'share',
     'sideEffect',
     'log',
     'map',
@@ -34,7 +35,8 @@ const API_SPEC = {
   ],
   'side-effects': [
     'sideEffect',
-    'log'
+    'log',
+    'share'
   ],
   'transforms': [
     'map',
