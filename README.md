@@ -94,49 +94,10 @@ As a shortcut, you can import any of the below from the root of the library.
 
 ### Create
 
+Create multi-casted callbags from multiple sources.
+
 ```js
 import { fromEvent, fromPromise, fromObservable, fromIterable } from 'pipe-me/create'
-```
-
-#### fromEvent
-
-Get data from any event listener.
-
-```js
-import { fromEvent } from 'pipe-me/create'
-
-const buttonClicked = fromEvent(document, 'click')
-  |> filter(event => event.target.tagName === 'BUTTON')
-```
-
-#### fromPromise
-
-```js
-import { fromPromise } from 'pipe-me/create'
-
-const promiseResolved = fromPromise(Promise.resolve([0, 1, 2])
-```
-
-#### fromObservable
-
-```js
-import { Observable } from 'rxjs'
-import { fromObservable } from 'pipe-me/create'
-
-const observed = fromObservable(Observable.of([0, 1, 2])
-```
-
-#### fromIterable
-
-```js
-import { Observable } from 'rxjs'
-import { fromIterable } from 'pipe-me/create'
-
-function* generate(i) {
-    yield i*2;
-}
-
-const observed = fromIterable(generate(2))
 ```
 
 ### Side Effects
@@ -164,6 +125,10 @@ import { take, skip, filter } from 'pipe-me/filters'
 ```js
 import { merge, concat, combine, flatten } from 'pipe-me/combiners'
 ```
+
+## API
+
+Read [Code Base For API](https://github.com/sartaj/pipe-me/blob/master/index.js)
 
 ## Goals
 

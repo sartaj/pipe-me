@@ -88,7 +88,7 @@ module.exports = {
    * user interface code (`<div></div>`), the browser url bar, network requests,
    * LED lights turning on, etc. Create any side effect here.
    *
-   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/sideEffect.png?raw=true)
+   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/master/docs/assets/diagrams/sideEffect.png?raw=true)
    */
   sideEffect: require('callbag-for-each'),
 
@@ -106,7 +106,7 @@ module.exports = {
    * 
    * Whenever you want to transform/change the contents of your stream, you'll use map.
    *
-   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/map.png?raw=true)
+   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/master/docs/assets/diagrams/map.png?raw=true)
    *
    * ***(aka transforming streams)***
    */
@@ -119,7 +119,7 @@ module.exports = {
    * aka(ish): Rx: 'scan' | Arrays: 'reduce'
    * 
    * This allows you to build up data over time.
-   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/accumulate.png?raw=true)
+   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/master/docs/assets/diagrams/accumulate.png?raw=true)
    */
   accumulate: require('callbag-scan'),
 
@@ -219,7 +219,7 @@ module.exports = {
    * 
    * Combine sources by putting one source after the previous source ends..
    * 
-   * ![Diagram for concat](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/concat.png?raw=true)
+   * ![Diagram for concat](https://github.com/sartaj/pipe-me/blob/master/docs/assets/diagrams/concat.png?raw=true)
    */
   concat: require('callbag-concat'),
 
