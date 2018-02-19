@@ -56,6 +56,7 @@
     "@babel/preset-env": "^7.0.0-beta.39",
     "ava": "^0.25.0",
     "babelify": "git+https://github.com/ladjs/babelify.git#ladjs/babelify",
+    "browser-env": "^3.2.5",
     "browserify": "^16.0.0",
     "http-server": "^0.11.1",
     "nyc": "^11.4.1"

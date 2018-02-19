@@ -17,14 +17,12 @@ const API_SPEC = {
     'take',
     'skip',
     'filter',
-    // 'switchTo',
     'merge',
     'concat',
     'combine'
   ],
   'create': [
     'fromObservable',
-    // 'fromAsync',
     'fromIterable',
     'fromEvent',
     'fromPromise'
@@ -46,7 +44,6 @@ const API_SPEC = {
     'merge',
     'concat',
     'combine',
-    // 'switchTo',
     'flatten'
   ]
 }
