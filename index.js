@@ -119,7 +119,7 @@ module.exports = {
    * aka(ish): Rx: 'scan' | Arrays: 'reduce'
    * 
    * This allows you to build up data over time.
-   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/map.png?raw=true)
+   * ![Diagram for map](https://github.com/sartaj/pipe-me/blob/feature/inline-docs/docs/assets/diagrams/accumulate.png?raw=true)
    */
   accumulate: require('callbag-scan'),
 
