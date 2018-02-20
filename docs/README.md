@@ -16,6 +16,15 @@
 * **Simplified Function Names**: This is designed to be a starter kit for callbags, with a focus on naming functions in a way that tries to keep analogies and concepts unified and designed for modeling complex interactions in apps.
 * **Graphical Code Annotations**: Graphic code annotations make understanding different functions a lot easier.  <br> <img src="http://sartaj.me/pipe-me/assets/readme/flatten.gif" /> <br> <img src="http://sartaj.me/pipe-me/assets/readme/concat.png" />
 
+### Callbag Features
+
+By using [callbags](https://github.com/callbag/callbag) under the hood, we get all the benefits of callbags.
+
+* **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
+* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
+* **Fast:** Approximately [as fast as](https://github.com/staltz/callbag-basics/tree/master/perf) xstream and RxJS.
+* **Modular**: Everything is a utility function based on the callbag spec, so no core library is needed.
+
 ## Installation
 
 ### Try Out
@@ -58,15 +67,6 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline bab
 ```bash
 yarn run babel src/ -- -d lib/
 ```
-
-### Callbag Features
-
-By using [callbags](https://github.com/callbag/callbag) under the hood, we get all the benefits of callbags.
-
-* **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
-* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
-* **Fast:** Approximately [as fast as](https://github.com/staltz/callbag-basics/tree/master/perf) xstream and RxJS.
-* **Modular**: Everything is a utility function based on the callbag spec, so no core library is needed.
 
 ## Main Concepts
 
