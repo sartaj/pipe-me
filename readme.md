@@ -7,7 +7,7 @@
 ![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/sartaj/pipe-me/badge.svg)](https://snyk.io/test/github/sartaj/pipe-me)
 
-`pipe-me` is a clean & functional way to describe interactions.
+`pipe-me` is a clean & functional way to describe interactions in JavaScript.
 
 ```javascript
 import { fromEvent, filter, map, merge, sideEffect } from 'pipe-me'
