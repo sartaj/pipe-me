@@ -13,9 +13,15 @@
   <script>
     window.$docsify = {
       name: 'pipe-me',
-      repo: 'git@github.com:sartaj/pipe-me'
+      loadSidebar: true,
+      repo: 'https://github.com/sartaj/pipe-me'
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
 </body>
 </html>

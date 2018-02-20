@@ -78,7 +78,7 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline bab
 yarn run babel src/ -- -d lib/
 ```
 
-## Categories
+## Importing
 
 If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
 
@@ -136,10 +136,6 @@ Combine multiple streams into new streams.
 import { merge, concat, combine, flatten } from 'pipe-me/combiners'
 ```
 
-## API
-
-Read [Code Base For API](https://github.com/sartaj/pipe-me/blob/master/index.js)
-
 ## Goals
 
 ### Designed For
@@ -160,3 +156,5 @@ In terms of the the [pipeline operator](https://github.com/tc39/proposal-pipelin
 In terms of the actual operators themselves, the far majority of the magic here is possible because of André Staltz's brilliant [callbag](https://github.com/callbag/callbag) spec. Because callbags are functional compositions, and because pipeline operators are just function compositions under the hood, any callbag can be used with pipeline operators.
 
 This actually means you can use this library with any other callbag library to unleash this awesome writing style in JS.
+
+### [API Docs](http://sartaj.me/pipe-me/#/api)
