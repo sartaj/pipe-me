@@ -16,25 +16,6 @@
 * **Simplified Function Names**: This is designed to be a starter kit for callbags, with a focus on naming functions in a way that tries to keep analogies and concepts unified and designed for modeling complex interactions in apps.
 * **Graphical Code Annotations**: Graphic code annotations make understanding different functions a lot easier.  <br> <img src="http://sartaj.me/pipe-me/assets/readme/flatten.gif" /> <br> <img src="http://sartaj.me/pipe-me/assets/readme/concat.png" />
 
-### Callbag Features
-
-By using [callbags](https://github.com/callbag/callbag) under the hood, we get all the benefits of callbags.
-
-* **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
-* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
-* **Fast:** Approximately [as fast as](https://github.com/staltz/callbag-basics/tree/master/perf) xstream and RxJS.
-* **Modular**: Everything is a utility function based on the callbag spec, so no core library is needed.
-
-## Main Concepts
-
-If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
-
-* **Create**: Create callbags from a number of sources, including Promises, Generators, etc.
-* **Side Effects**: Only way to have data affect external world, including UI. Only two methods are `sideEffect`, and `log`.
-* **Transforms**: Change the content of your data.
-* **Filters**: Filter out data based on different criteria. Includes different timer operators, like time based ones like `throttle`.
-* **Combiners**: Combine 2 or more callbags into with different techniques.
-
 ## Installation
 
 ### Try Out
@@ -77,6 +58,25 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline bab
 ```bash
 yarn run babel src/ -- -d lib/
 ```
+
+### Callbag Features
+
+By using [callbags](https://github.com/callbag/callbag) under the hood, we get all the benefits of callbags.
+
+* **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
+* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
+* **Fast:** Approximately [as fast as](https://github.com/staltz/callbag-basics/tree/master/perf) xstream and RxJS.
+* **Modular**: Everything is a utility function based on the callbag spec, so no core library is needed.
+
+## Main Concepts
+
+If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
+
+* **Create**: Create callbags from a number of sources, including Promises, Generators, etc.
+* **Side Effects**: Only way to have data affect external world, including UI. Only two methods are `sideEffect`, and `log`.
+* **Transforms**: Change the content of your data.
+* **Filters**: Filter out data based on different criteria. Includes different timer operators, like time based ones like `throttle`.
+* **Combiners**: Combine 2 or more callbags into with different techniques.
 
 ## Language Design
 

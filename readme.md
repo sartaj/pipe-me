@@ -44,16 +44,6 @@ By using [callbags](https://github.com/callbag/callbag) under the hood, we get a
 * **Fast:** Approximately [as fast as](https://github.com/staltz/callbag-basics/tree/master/perf) xstream and RxJS.
 * **Modular**: Everything is a utility function based on the callbag spec, so no core library is needed.
 
-## Main Concepts
-
-If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
-
-* **Create**: Create callbags from a number of sources, including Promises, Generators, etc.
-* **Side Effects**: Only way to have data affect external world, including UI. Only two methods are `sideEffect`, and `log`.
-* **Transforms**: Change the content of your data.
-* **Filters**: Filter out data based on different criteria. Includes different timer operators, like time based ones like `throttle`.
-* **Combiners**: Combine 2 or more callbags into with different techniques.
-
 ## Installation
 
 ### Try Out
@@ -96,6 +86,16 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline bab
 ```bash
 yarn run babel src/ -- -d lib/
 ```
+
+## Main Concepts
+
+If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
+
+* **Create**: Create callbags from a number of sources, including Promises, Generators, etc.
+* **Side Effects**: Only way to have data affect external world, including UI. Only two methods are `sideEffect`, and `log`.
+* **Transforms**: Change the content of your data.
+* **Filters**: Filter out data based on different criteria. Includes different timer operators, like time based ones like `throttle`.
+* **Combiners**: Combine 2 or more callbags into with different techniques.
 
 ## Language Design
 
@@ -143,4 +143,4 @@ This actually means you can use this library with any other callbag library to u
 * cycle-react
 * react.js
 
-### [API Docs](http://sartaj.me/pipe-me)
+## [API Docs](http://sartaj.me/pipe-me)
