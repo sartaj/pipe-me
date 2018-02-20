@@ -1,6 +1,6 @@
 <html>
     <body>
-        <code>
+        <pre style="background:#cfcfcf">
             import { fromEvent, filter, map, merge, sideEffect } from '../../../index.js'
 
             const fruitArray = [
@@ -35,7 +35,7 @@
             
             buttonClicked
                 |> sideEffect(state => console.log(state))                
-        </code>
+        </pre>
         <button>Convert Fruit To Vegetable</button>
         <script src="//sartaj.me/pipe-me/convert-fruit.js"></script>
     </body>
