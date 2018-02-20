@@ -4,20 +4,20 @@
 [![Build Status](https://travis-ci.org/sartaj/pipe-me.svg?branch=master)](https://travis-ci.org/sartaj/pipe-me)
 [![GitHub issues](https://img.shields.io/github/issues/sartaj/pipe-me.svg)](https://github.com/sartaj/pipe-me/issues)
 [![codecov](https://codecov.io/gh/sartaj/pipe-me/branch/master/graph/badge.svg)](https://codecov.io/gh/sartaj/pipe-me)
-[![npm Downloads](https://img.shields.io/npm/dm/pipe-me.svg)]()
-[![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)]()
-[![DevDependencies](https://img.shields.io/david/dev/sartaj/pipe-me.svg)]()
+![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/sartaj/pipe-me/badge.svg)](https://snyk.io/test/github/sartaj/pipe-me)
 
-A clean & functional way to describe your app.
+`pipe-me` is a clean & functional way to describe interactions with code.
 
-Under the hood, it uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag).
+* **UNIX FTW**: Describe your entire app with streams and pipes. And by mixing with [flow](https://flow.org/) for type annotations, You can create beautiful streams of functions based on beautiful data structures.
+* **No Framework Lock In** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
+* **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
+* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
+* **Graphical Code Annotations**: This starter kit has graphic code annotations to make understanding different functions a lot easier.  <br> <img src="http://sartaj.me/pipe-me/assets/readme/flatten.gif" /> <br> <img src="http://sartaj.me/pipe-me/assets/readme/concat.png" />
 
-Supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
+## Getting Started
 
-If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
-
-## Example
+Here is a simple example to listen to the click of a button and have that both update the UI and output to the console. ([See Live Demo](http://sartaj.me/pipe-me/examples/convert-fruit/))
 
 ```javascript
 import { fromEvent, filter, map, merge, sideEffect } from 'pipe-me'
@@ -41,7 +41,7 @@ buttonClicked
 * Options 1: Clone this repo. Run `yarn` or `npm install`. Then `yarn example`. Then click the button in the example and watch the DOM and console both print at the same time with such little effort.
 * Option 2: Set up your your envrionment with Babel, as listed in the instructions below.
 
-## Setup
+## Installation
 
 ### Yarn/npm
 
@@ -55,28 +55,32 @@ npm install pipe-me --save
 
 ### Babel
 
-To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to add the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator) to your babel config.
+To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to add the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator) to your babel config. We would also recommend installing [babel-flow](http://flow.org) for clean data structures.
 
 #### Fresh Install
 
 For setting up from scratch, the following should be adequate.
 
 ```json
-yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline --dev
+yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline babel-preset-flow  --dev
 ```
 
 ```json
 {
-    "presets": ["@babel/preset-env"],
+    "presets": ["@babel/preset-env", "flow"],
     "plugins": ["@babel/plugin-proposal-pipeline-operator"]
 }
 ```
 
-## API
+##### CLI
+
+```bash
+yarn run babel src/ -- -d lib/
+```
+
+## Categories
 
 If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
-
-### Category Overview
 
 * Create: Create callbags from a number of sources, including Promises, Generators, etc.
 * Side Effects: Only way to have data affect external world, including UI. Only two methods are `sideEffect`, and `log`.
@@ -108,50 +112,9 @@ Side effects are the only place you can make a change.
 import { sideEffect, log } from 'pipe-me/side-effects'
 ```
 
-#### sideEffect
-
-`sideEffect` is the only place you can make changes to the real world with the data you are transforming. This is where most of the 'real' work happens, like loggings, rendering UI, etc.
-
-```js
-buttonClicked
-  |> sideEffect(renderDOM)
-```
-
-#### log
-
-`log` is a simple method to help you quickly console log different parts of your streams.
-
-```js
-buttonClicked
-  |> log
-```
-
-#### share
-
-Allow multiple sideEffects. All of `pipe-me` creators use `share` under the hood, so this method won't be necessary most of the time. If you create a callbag with another library, this `share` method could become useful in those scenarios.
-
-```js
-import { share } from 'pipe-me/create'
-
-function* generate(i) {
-  yield i*2;
-}
-
-const observed = fromIterable(generate(2))
-
-const shared = share(observed)
-
-share
-  |> sideEffect(d => { console.log(d) /* 4 */ })
-
-setTimeout(() => {
-  share
-    |> sideEffect(d => { console.log(d) /* 4 */ })
-}, 300)
-
-```
-
 ### Transforms
+
+Change the contents of a stream.
 
 ```js
 import { map, accumulate } from 'pipe-me/transforms'
@@ -159,11 +122,15 @@ import { map, accumulate } from 'pipe-me/transforms'
 
 ### Filters
 
+Filter stream emitting based on conditionals.
+
 ```js
 import { take, skip, filter } from 'pipe-me/filters'
 ```
 
 ### Combiners
+
+Combine multiple streams into new streams.
 
 ```js
 import { merge, concat, combine, flatten } from 'pipe-me/combiners'
@@ -178,7 +145,7 @@ Read [Code Base For API](https://github.com/sartaj/pipe-me/blob/master/index.js)
 ### Designed For
 
 * Beginners who may have just fairly new to programming, but have completed either an online intensive or code school.
-* Experts who may desire a simple dependency that covers most app use cases.
+* Anyone, including experts, who want to code with [UNIX Principles](http://www.faqs.org/docs/artu/ch01s06.html) in mind.
 
 ### Purpose
 
