@@ -97,16 +97,31 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline bab
 yarn run babel src/ -- -d lib/
 ```
 
-## Goals
+## Language Design
 
-### Designed For
+`pipe-me` is designed with the hope of having a gradual learning curve for beginner js developers with little background in computer science or functional programming, while maximizing use of proper [callbags](https://github.com/callbags/callbags) and [UNIX-like Principles](http://www.faqs.org/docs/artu/ch01s06.html) for professional app development.
 
-* Beginners who may have just fairly new to programming, but have completed either an online intensive or code school.
-* Anyone, including experts, who want to code with [UNIX Principles](http://www.faqs.org/docs/artu/ch01s06.html) in mind.
+### Current Problem
 
-### Purpose
+The world of Observables, FRP, and related systems have a huge learning curve for many beginner coders.
 
-The purpose of `pipe-me` is to provide an API design with gradual learning in mind. Currently, the API is mostly using operators found in [callbag-basics](https://github.com/staltz/callbag-basics) as a proof of concept. Over time, parts of this may diverge, as I intend to survey multiple code school students on their understanding of different names.
+Part of this may be due to the size of operations and complex amount of analogies used within the world.
+
+* Water utilities (streams, pipes, backpressure, pool, sources, sinks)
+* Radio systems (subscribe, publish, observable, signals)
+* Grammar (subject, predicate)
+* Paper (foldp, fold)
+* Sensory (observable, observe)
+* Computer hardware related (drivers, ports)
+* Math + Lambda Calculus (map, flatten)
+* And sheer mind games (wtf is a flatmap)
+
+### `pipe-me` API Goals
+
+* Simple language for basic English speakers and bare bones computer science / js knowledge, focusing on stream and first class event variables.
+* Commit to internally consistent analogy.
+* Maximize pipe syntax to mimic UNIX pipes.
+* Allow for gradual learning of inner workings of callbag spec.
 
 ### Is This Standard JavaScript?
 
@@ -117,5 +132,15 @@ In terms of the the [pipeline operator](https://github.com/tc39/proposal-pipelin
 In terms of the actual operators themselves, the far majority of the magic here is possible because of André Staltz's brilliant [callbag](https://github.com/callbag/callbag) spec. Because callbags are functional compositions, and because pipeline operators are just function compositions under the hood, any callbag can be used with pipeline operators.
 
 This actually means you can use this library with any other callbag library to unleash this awesome writing style in JS.
+
+### Inspirations
+
+* rxjs
+* cycle.js
+* kefir.js
+* xstream
+* elm
+* cycle-react
+* react.js
 
 ### [API Docs](http://sartaj.me/pipe-me)
