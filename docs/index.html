@@ -7,14 +7,26 @@
   <meta name="description" content="Pipeable programming for cleaner code. Uses callbags and pipeline operator.">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/buble.css">
+  <style>
+    .sidebar-nav > ul > li > a {
+      font-weight: bold;
+    }
+    .markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section strong {
+      color: #333;
+      font-weight: 500;
+    }
+    .markdown-section pre {
+      padding: initial;
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
       name: 'pipe-me',
-      loadSidebar: true,
-      repo: 'https://github.com/sartaj/pipe-me'
+      repo: 'https://github.com/sartaj/pipe-me',
+      maxLevel: 2
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>

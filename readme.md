@@ -9,11 +9,21 @@
 
 `pipe-me` is a clean & functional way to describe interactions with code.
 
+## Features
+
 * **UNIX FTW**: Describe your entire app with streams and pipes. And by mixing with [flow](https://flow.org/) for type annotations, You can create beautiful streams of functions based on beautiful data structures.
 * **No Framework Lock In** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
+* **Simplified Function Names**: This is designed to be a starter kit for callbags, with a focus on naming functions in a way that tries to keep analogies and concepts unified and designed for modeling complex interactions in apps.
+* **Graphical Code Annotations**: Graphic code annotations make understanding different functions a lot easier.  <br> <img src="http://sartaj.me/pipe-me/assets/readme/flatten.gif" /> <br> <img src="http://sartaj.me/pipe-me/assets/readme/concat.png" />
+
+### Callbag Features
+
+By using [callbags](https://github.com/callbag/callbag) under the hood, we get all the benefits of callbags.
+
 * **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
 * **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
-* **Graphical Code Annotations**: This starter kit has graphic code annotations to make understanding different functions a lot easier.  <br> <img src="http://sartaj.me/pipe-me/assets/readme/flatten.gif" /> <br> <img src="http://sartaj.me/pipe-me/assets/readme/concat.png" />
+* **Fast:** Approximately [as fast as](https://github.com/staltz/callbag-basics/tree/master/perf) xstream and RxJS.
+* **Modular**: Everything is a utility function based on the callbag spec, so no core library is needed.
 
 ## Getting Started
 
@@ -36,14 +46,25 @@ buttonClicked
   |> sideEffect(state => console.log(state))
 ```
 
-### Try It Out
+## Main Concepts
 
-* Options 1: Clone this repo. Run `yarn` or `npm install`. Then `yarn example`. Then click the button in the example and watch the DOM and console both print at the same time with such little effort.
-* Option 2: Set up your your envrionment with Babel, as listed in the instructions below.
+If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
+
+* **Create**: Create callbags from a number of sources, including Promises, Generators, etc.
+* **Side Effects**: Only way to have data affect external world, including UI. Only two methods are `sideEffect`, and `log`.
+* **Transforms**: Change the content of your data.
+* **Filters**: Filter out data based on different criteria. Includes different timer operators, like time based ones like `throttle`.
+* **Combiners**: Combine 2 or more callbags into with different techniques.
 
 ## Installation
 
-### Yarn/npm
+### Try Out
+
+Clone this repo. Run `yarn` or `npm install`. Then `yarn example`. Then click the button in the example and watch the DOM and console both print at the same time with such little effort.
+
+### Install
+
+#### Yarn/npm
 
 ```bash
 yarn add pipe-me
@@ -53,11 +74,11 @@ yarn add pipe-me
 npm install pipe-me --save
 ```
 
-### Babel
+#### Babel
 
 To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to add the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator) to your babel config. We would also recommend installing [babel-flow](http://flow.org) for clean data structures.
 
-#### Fresh Install
+##### Fresh Install
 
 For setting up from scratch, the following should be adequate.
 
@@ -72,68 +93,10 @@ yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline bab
 }
 ```
 
-##### CLI
+###### CLI
 
 ```bash
 yarn run babel src/ -- -d lib/
-```
-
-## Importing
-
-If you are new to paradigms like this (found in systems like RxJS and IxJS), sometimes it can be hard to remember the purpose of different operators. To simplify this, you can import from 5 different categories.
-
-* Create: Create callbags from a number of sources, including Promises, Generators, etc.
-* Side Effects: Only way to have data affect external world, including UI. Only two methods are `sideEffect`, and `log`.
-* Transforms: Change the content of your data.
-* Filters: Filter out data based on different criteria. Includes different timer operators, like time based ones like `throttle`.
-* Combiners: Combine 2 or more callbags into with different techniques.
-
-### Import Anything
-
-```js
-import { ... } from 'pipe-me'
-```
-
-As a shortcut, you can import any of the below from the root of the library.
-
-### Create
-
-Create multi-casted callbags from multiple sources.
-
-```js
-import { fromEvent, fromPromise, fromObservable, fromIterable } from 'pipe-me/create'
-```
-
-### Side Effects
-
-Side effects are the only place you can make a change.
-
-```js
-import { sideEffect, log } from 'pipe-me/side-effects'
-```
-
-### Transforms
-
-Change the contents of a stream.
-
-```js
-import { map, accumulate } from 'pipe-me/transforms'
-```
-
-### Filters
-
-Filter stream emitting based on conditionals.
-
-```js
-import { take, skip, filter } from 'pipe-me/filters'
-```
-
-### Combiners
-
-Combine multiple streams into new streams.
-
-```js
-import { merge, concat, combine, flatten } from 'pipe-me/combiners'
 ```
 
 ## Goals
