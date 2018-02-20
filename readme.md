@@ -120,4 +120,4 @@ In terms of the actual operators themselves, the far majority of the magic here 
 
 This actually means you can use this library with any other callbag library to unleash this awesome writing style in JS.
 
-### [API Docs](http://sartaj.me/pipe-me/#/api)
+### [API Docs](http://sartaj.me/pipe-me)
