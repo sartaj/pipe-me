@@ -9,26 +9,6 @@
 
 `pipe-me` is a clean & functional way to describe interactions with code.
 
-## Features
-
-* **UNIX FTW**: Describe your entire app with streams and pipes. And by mixing with [flow](https://flow.org/) for type annotations, You can create beautiful streams of functions based on beautiful data structures.
-* **No Framework Lock In** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
-* **Simplified Function Names**: This is designed to be a starter kit for callbags, with a focus on naming functions in a way that tries to keep analogies and concepts unified and designed for modeling complex interactions in apps.
-* **Graphical Code Annotations**: Graphic code annotations make understanding different functions a lot easier.  <br> <img src="http://sartaj.me/pipe-me/assets/readme/flatten.gif" /> <br> <img src="http://sartaj.me/pipe-me/assets/readme/concat.png" />
-
-### Callbag Features
-
-By using [callbags](https://github.com/callbag/callbag) under the hood, we get all the benefits of callbags.
-
-* **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
-* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
-* **Fast:** Approximately [as fast as](https://github.com/staltz/callbag-basics/tree/master/perf) xstream and RxJS.
-* **Modular**: Everything is a utility function based on the callbag spec, so no core library is needed.
-
-## Getting Started
-
-Here is a simple example to listen to the click of a button and have that both update the UI and output to the console. ([See Live Demo](http://sartaj.me/pipe-me/examples/convert-fruit/))
-
 ```javascript
 import { fromEvent, filter, map, merge, sideEffect } from 'pipe-me'
 
@@ -45,6 +25,24 @@ buttonClicked
 buttonClicked
   |> sideEffect(state => console.log(state))
 ```
+
+[See Live Demo](http://sartaj.me/pipe-me/examples/convert-fruit/)
+
+## Features
+
+* **UNIX FTW**: Describe your entire app with streams and pipes. And by mixing with [flow](https://flow.org/) for type annotations, You can create beautiful streams of functions based on beautiful data structures.
+* **No Framework Lock In** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
+* **Simplified Function Names**: This is designed to be a starter kit for callbags, with a focus on naming functions in a way that tries to keep analogies and concepts unified and designed for modeling complex interactions in apps.
+* **Graphical Code Annotations**: Graphic code annotations make understanding different functions a lot easier.  <br> <img src="http://sartaj.me/pipe-me/assets/readme/flatten.gif" /> <br> <img src="http://sartaj.me/pipe-me/assets/readme/concat.png" />
+
+### Callbag Features
+
+By using [callbags](https://github.com/callbag/callbag) under the hood, we get all the benefits of callbags.
+
+* **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
+* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
+* **Fast:** Approximately [as fast as](https://github.com/staltz/callbag-basics/tree/master/perf) xstream and RxJS.
+* **Modular**: Everything is a utility function based on the callbag spec, so no core library is needed.
 
 ## Main Concepts
 
