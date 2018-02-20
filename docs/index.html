@@ -18,6 +18,20 @@
     .markdown-section pre {
       padding: initial;
     }
+    .cover pre {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+      background: #fff;
+      padding: 1rem;
+    }
+    section.cover {
+      max-height: 700px;
+      height: 98vh;
+    }
+    main {
+      box-shadow: 0px -3px 8px rgba(0,0,0,0.1)
+    }
   </style>
 </head>
 <body>
@@ -26,6 +40,7 @@
     window.$docsify = {
       name: 'pipe-me',
       repo: 'https://github.com/sartaj/pipe-me',
+      coverpage: true,
       maxLevel: 2
     }
   </script>
