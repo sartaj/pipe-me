@@ -9,15 +9,17 @@
 [![DevDependencies](https://img.shields.io/david/dev/sartaj/pipe-me.svg)]()
 [![Known Vulnerabilities](https://snyk.io/test/github/sartaj/pipe-me/badge.svg)](https://snyk.io/test/github/sartaj/pipe-me)
 
-A clean & functional way to describe your app.
+pipe-me is a clean & functional way to describe interactions with code.
 
-Under the hood, it uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag).
+* **UNIX FTW**: Describe your entire app with streams and pipes. And by mixing with [flow](https://flow.org/) for type annotations, You can create beautiful streams of functions based on beautiful data structures.
+* **No Framework Lock In** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
+* **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
+* **Graphical Code Annotations**: This starter kit has graphic code annotations to make understanding different functions a lot easier.
+* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
 
-Supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
+## Getting Started
 
-If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
-
-## Example
+Here is a simple example to listen to the click of a button and have that both update the UI and output to the console.
 
 ```javascript
 import { fromEvent, filter, map, merge, sideEffect } from 'pipe-me'
@@ -41,7 +43,7 @@ buttonClicked
 * Options 1: Clone this repo. Run `yarn` or `npm install`. Then `yarn example`. Then click the button in the example and watch the DOM and console both print at the same time with such little effort.
 * Option 2: Set up your your envrionment with Babel, as listed in the instructions below.
 
-## Setup
+## Installation
 
 ### Yarn/npm
 
@@ -55,21 +57,27 @@ npm install pipe-me --save
 
 ### Babel
 
-To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to add the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator) to your babel config.
+To use the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator), you'll need to add the [pipeline-operator plugin](https://github.com/babel/babel/tree/master/packages/babel-plugin-proposal-pipeline-operator) to your babel config. We would also recommend installing [babel-flow](http://flow.org) for clean data structures.
 
 #### Fresh Install
 
 For setting up from scratch, the following should be adequate.
 
 ```json
-yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline --dev
+yarn add @babel/cli @babel/preset-env @babel/preset-plugin-proposal-pipeline babel-preset-flow  --dev
 ```
 
 ```json
 {
-    "presets": ["@babel/preset-env"],
+    "presets": ["@babel/preset-env", "flow"],
     "plugins": ["@babel/plugin-proposal-pipeline-operator"]
 }
+```
+
+##### CLI
+
+```bash
+yarn run babel src/ -- -d lib/
 ```
 
 ## Categories

@@ -14,7 +14,7 @@
     "watch": "ava --watch",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
     "example": "yarn build-examples && http-server examples/convert-fruit",
-    "build-examples": "browserify examples/convert-fruit/main.js -o examples/convert-fruit/bundle.js -t [ babelify --presets [ @babel/preset-env ] --plugins [ @babel/plugin-proposal-pipeline-operator ] ]"
+    "build-examples": "browserify docs/examples/convert-fruit/main.js -o docs/examples/convert-fruit/bundle.js -t [ babelify --presets [ @babel/preset-env ] --plugins [ @babel/plugin-proposal-pipeline-operator ] ]"
   },
   "keywords": [
     "callbag",
