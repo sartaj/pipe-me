@@ -4,22 +4,25 @@
 [![Build Status](https://travis-ci.org/sartaj/pipe-me.svg?branch=master)](https://travis-ci.org/sartaj/pipe-me)
 [![GitHub issues](https://img.shields.io/github/issues/sartaj/pipe-me.svg)](https://github.com/sartaj/pipe-me/issues)
 [![codecov](https://codecov.io/gh/sartaj/pipe-me/branch/master/graph/badge.svg)](https://codecov.io/gh/sartaj/pipe-me)
-[![npm Downloads](https://img.shields.io/npm/dm/pipe-me.svg)]()
-[![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)]()
-[![DevDependencies](https://img.shields.io/david/dev/sartaj/pipe-me.svg)]()
+![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)
+![DevDependencies](https://img.shields.io/david/dev/sartaj/pipe-me.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/sartaj/pipe-me/badge.svg)](https://snyk.io/test/github/sartaj/pipe-me)
 
-pipe-me is a clean & functional way to describe interactions with code.
+`pipe-me` is a clean & functional way to describe interactions with code.
 
 * **UNIX FTW**: Describe your entire app with streams and pipes. And by mixing with [flow](https://flow.org/) for type annotations, You can create beautiful streams of functions based on beautiful data structures.
 * **No Framework Lock In** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
 * **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
+* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
 * **Graphical Code Annotations**: This starter kit has graphic code annotations to make understanding different functions a lot easier.
-* **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
+
+![](http://sartaj.me/pipe-me/assets/readme/concat.png)
+
+![](http://sartaj.me/pipe-me/assets/readme/flatten.gif)
 
 ## Getting Started
 
-Here is a simple example to listen to the click of a button and have that both update the UI and output to the console.
+Here is a simple example to listen to the click of a button and have that both update the UI and output to the console. ([See Live Demo](http://sartaj.me/pipe-me/examples/convert-fruit/))
 
 ```javascript
 import { fromEvent, filter, map, merge, sideEffect } from 'pipe-me'
@@ -147,7 +150,7 @@ Read [Code Base For API](https://github.com/sartaj/pipe-me/blob/master/index.js)
 ### Designed For
 
 * Beginners who may have just fairly new to programming, but have completed either an online intensive or code school.
-* Experts who may desire a simple dependency that covers most app use cases.
+* Anyone, including experts, who want to code with [UNIX Principles](http://www.faqs.org/docs/artu/ch01s06.html) in mind.
 
 ### Purpose
 
