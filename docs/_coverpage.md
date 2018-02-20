@@ -1,4 +1,4 @@
-# `pipe-me` is a clean & functional way to describe interactions.
+# `|> pipe-me` is a clean & functional way to describe interactions.
 
 ```javascript
 import { fromEvent, filter, map, merge, sideEffect } from 'pipe-me'
