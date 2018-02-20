@@ -334,7 +334,7 @@ userWantsToSubmit |> log // click event
 
 ## concat
 
-Combine sources by putting one source after the previous source ends..
+Combine sources by putting one source after the previous source ends.
 
 ![Diagram for concat](https://github.com/sartaj/pipe-me/blob/master/docs/assets/diagrams/concat.png?raw=true)
 
