@@ -33,6 +33,7 @@ buttonClicked
 * **UNIX FTW**: Describe your entire app with streams and pipes. And by mixing with [flow](https://flow.org/) for type annotations, You can create beautiful streams of functions based on beautiful data structures.
 * **No Framework Lock In** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
 * **Simplified Function Names**: This is designed to be a starter kit for callbags, with a focus on naming functions in a way that tries to keep analogies and concepts unified and designed for modeling complex interactions in apps.
+* **Always On Streams**: All of `pipe-me` creators [multicast](https://blog.angularindepth.com/rxjs-understanding-the-publish-and-share-operators-16ea2f446635), aka [share](https://github.com/staltz/callbag-share), by default. This works well for modeling [dataflow](https://staltz.com/why-we-need-callbags.html#interoperability) between interactions.
 * **Graphical Code Annotations**: Graphic code annotations make understanding different functions a lot easier.  <br> <img src="http://sartaj.me/pipe-me/assets/readme/flatten.gif" /> <br> <img src="http://sartaj.me/pipe-me/assets/readme/concat.png" />
 
 ### Callbag Features
