@@ -5,7 +5,6 @@
 [![GitHub issues](https://img.shields.io/github/issues/sartaj/pipe-me.svg)](https://github.com/sartaj/pipe-me/issues)
 [![codecov](https://codecov.io/gh/sartaj/pipe-me/branch/master/graph/badge.svg)](https://codecov.io/gh/sartaj/pipe-me)
 ![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)
-![DevDependencies](https://img.shields.io/david/dev/sartaj/pipe-me.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/sartaj/pipe-me/badge.svg)](https://snyk.io/test/github/sartaj/pipe-me)
 
 `pipe-me` is a clean & functional way to describe interactions with code.
@@ -14,11 +13,7 @@
 * **No Framework Lock In** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
 * **Support Reactive & Interactive Programming:** Callbags as a spec supports promises/async, iterators/generators, events, & observables to provide a hybrid of reactive and interactive programming.
 * **Chain Everything**: Working just like Rx.js, `var`/`let`/`const` can be used to create chains of callbags that describe your app clearly. If you are new to JavaScript, this library may sound complicated, but bear with it. Do you know how to use spreadsheets? Well then, you already understand the basics concepts behind this library.
-* **Graphical Code Annotations**: This starter kit has graphic code annotations to make understanding different functions a lot easier.
-
-![](http://sartaj.me/pipe-me/assets/readme/concat.png)
-
-![](http://sartaj.me/pipe-me/assets/readme/flatten.gif)
+* **Graphical Code Annotations**: This starter kit has graphic code annotations to make understanding different functions a lot easier. ![](http://sartaj.me/pipe-me/assets/readme/concat.png) ![](http://sartaj.me/pipe-me/assets/readme/flatten.gif)
 
 ## Getting Started
 
