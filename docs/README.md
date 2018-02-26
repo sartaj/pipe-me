@@ -1,20 +1,21 @@
 # pipe-me
 
-[![npm](https://img.shields.io/npm/v/pipe-me.svg)]()
+[![npm](https://img.shields.io/npm/v/pipe-me.svg)](https://npmjs.org/pipe-me)
 [![Build Status](https://travis-ci.org/sartaj/pipe-me.svg?branch=master)](https://travis-ci.org/sartaj/pipe-me)
 [![GitHub issues](https://img.shields.io/github/issues/sartaj/pipe-me.svg)](https://github.com/sartaj/pipe-me/issues)
 [![codecov](https://codecov.io/gh/sartaj/pipe-me/branch/master/graph/badge.svg)](https://codecov.io/gh/sartaj/pipe-me)
-![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)
+[![Dependencies](https://img.shields.io/david/sartaj/pipe-me.svg)](https://david-dm.org/sartaj/pipe-me)
 [![Known Vulnerabilities](https://snyk.io/test/github/sartaj/pipe-me/badge.svg)](https://snyk.io/test/github/sartaj/pipe-me)
 
 [See Live Demo](http://sartaj.me/pipe-me/examples/convert-fruit/)
 
 ## Features
 
-* **UNIX FTW**: Describe your entire app with streams and pipes. And by mixing with [flow](https://flow.org/) for type annotations, You can create beautiful streams of functions based on beautiful data structures.
-* **No Framework Lock In** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
-* **Simplified Function Names**: This is designed to be a starter kit for callbags, with a focus on naming functions in a way that tries to keep analogies and concepts unified and designed for modeling complex interactions in apps.
-* **Always On Streams**: All of `pipe-me` creators [multicast](https://blog.angularindepth.com/rxjs-understanding-the-publish-and-share-operators-16ea2f446635), aka [share](https://github.com/staltz/callbag-share), by default. This works well for modeling [dataflow](https://staltz.com/why-we-need-callbags.html#interoperability) between interactions.
+* **UNIX(ish) FTW**: Describe your entire app as functions over time with streams and pipes.
+* **More Design Pattern than Framework** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
+* **Simplified Language Design**: This is designed to be a starter kit for callbags, with a focus on naming functions in a way that tries to keep analogies and concepts unified and designed for modeling complex interactions in apps.
+* **Elm in JS**: By mixing with [flow](https://flow.org/) for type annotations, JavaScript is given all the major syntax features [elm](https://elm-lang.org), allowing you to create beautiful streams of functions based on beautiful data structures.
+* **Streams For Interactive Apps**: All of `pipe-me` creators [multicast](https://blog.angularindepth.com/rxjs-understanding-the-publish-and-share-operators-16ea2f446635), aka [share](https://github.com/staltz/callbag-share), by default. This works well for modeling [dataflow](https://staltz.com/why-we-need-callbags.html#interoperability) between interactions.
 * **Graphical Code Annotations**: Graphic code annotations make understanding different functions a lot easier.  <br> <img src="http://sartaj.me/pipe-me/assets/readme/flatten.gif" /> <br> <img src="http://sartaj.me/pipe-me/assets/readme/concat.png" />
 
 ### Callbag Features

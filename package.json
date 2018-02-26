@@ -45,7 +45,7 @@
     "callbag-from-obs": "1.0.x",
     "callbag-from-promise": "1.0.x",
     "callbag-map": "1.0.x",
-    "callbag-merge": "1.0.x",
+    "callbag-merge": "1.1.x",
     "callbag-scan": "1.0.x",
     "callbag-share": "1.0.x",
     "callbag-skip": "1.0.x",
@@ -60,6 +60,7 @@
     "browser-env": "^3.2.5",
     "browserify": "^16.0.0",
     "http-server": "^0.11.1",
+    "np": "^2.20.1",
     "nyc": "^11.4.1"
   }
 }
