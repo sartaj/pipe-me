@@ -1,5 +1,7 @@
 # pipe-me
 
+_"Check this library! Convert anything to callbags, then use pipeline operator (ES proposal), and experience an entirely new flavor of JS" - [André Staltz](https://twitter.com/andrestaltz/status/962301798244548609)_
+
 [![npm](https://img.shields.io/npm/v/pipe-me.svg)](https://npmjs.org/pipe-me)
 [![Build Status](https://travis-ci.org/sartaj/pipe-me.svg?branch=master)](https://travis-ci.org/sartaj/pipe-me)
 [![GitHub issues](https://img.shields.io/github/issues/sartaj/pipe-me.svg)](https://github.com/sartaj/pipe-me/issues)
