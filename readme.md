@@ -1,3 +1,5 @@
+_"Check this library! Convert anything to callbags, then use pipeline operator (ES proposal), and experience an entirely new flavor of JS" - [André Staltz](https://twitter.com/andrestaltz/status/962301798244548609)_
+
 # pipe-me
 
 [![npm](https://img.shields.io/npm/v/pipe-me.svg)](https://npmjs.org/pipe-me)
@@ -29,8 +31,6 @@ buttonClicked
 [See Live Demo](http://sartaj.me/pipe-me/examples/convert-fruit/)
 
 ## Features
-
-_"Check this library! Convert anything to callbags, then use pipeline operator (ES proposal), and experience an entirely new flavor of JS" - [André Staltz](https://twitter.com/andrestaltz/status/962301798244548609)_
 
 * **UNIX(ish) FTW**: Describe your entire app as functions over time with streams and pipes.
 * **More Design Pattern than Framework** — Under the hood, `pipe-me` merely uses the [pipeline operator](https://github.com/tc39/proposal-pipeline-operator) and [callbags](https://github.com/callbag/callbag). To move off of `pipe-me`, or to extend it, you can use anything in the [callbag universe](https://github.com/callbag/callbag/wiki).
